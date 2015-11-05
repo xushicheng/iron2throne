@@ -1,0 +1,14 @@
+<% @microposts.each do |micropost| %>
+  <%= link_to micropost do %>
+    <div class="micropost span4" id="<%= micropost.id %>">
+      <div class="link_info">
+          <h3 class="title">
+            <%= micropost.title %>
+          </h3>
+      </div>
+      <div class="info">
+        <h6>Post by <%= link_to micropost.user.name, micropost.user %></h6>
+      </div>
+    </div>
+  <% end %>
+<% end %>

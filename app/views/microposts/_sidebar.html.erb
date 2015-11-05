@@ -1,0 +1,22 @@
+<div class="pull-right span4 sidebar">
+  <div class="row">
+    <div class="micropost-notice span4">
+      <div class="content">
+        <h4 class="title">这里是铁王座</h4>
+        <h6>第三方登录研究中</h6>
+        <div class="info">
+          <h6>Post by 徐世成</h6>
+        </div>
+      </div>
+    </div>
+    <div class="micropost-notice new span4">
+      <div class="content">
+        <h2 class="title"> 有要分享的东西?</h2>
+        <h3><%= link_to "点我发布一个", new_micropost_url %></h3>
+      </div>
+    </div>
+    <div class="random">
+      <%= link_to "随便瞅瞅", Micropost.random, class: "btn-shuffle span4" %>
+    </div>
+  </div>
+</div>

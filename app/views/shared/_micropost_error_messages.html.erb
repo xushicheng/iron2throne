@@ -1,0 +1,12 @@
+<% if @micropost.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      出现了 <%= @micropost.errors.count %> 个错误呢.╮(╯_╰)╭
+    </div>
+    <ul>
+    <% @micropost.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

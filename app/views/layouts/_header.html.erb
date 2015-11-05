@@ -1,0 +1,25 @@
+<div class="footer-wrapper">
+  <div class="container">
+    <div class="footer">
+      <div class="menu">
+        <%= link_to "欢迎来访", microposts_url %>
+        <%= link_to "随便瞅瞅", Micropost.random %>
+        <%= link_to "分享一个", new_micropost_url %>
+        <div class="sign-in pull-right">
+          <% if logged_in? %>
+            <% if current_user.admin? && !current_user?(@user) %>
+                <%= link_to "删除用户", @user, method: :delte, data: { confirm:"确定要这样做?"} %>
+            <% end %>
+            <%= link_to current_user.name, current_user %>
+            <%= link_to "修改账户", edit_user_path(current_user) %>
+            <%= link_to "退出", logout_path, method: "delete" %>
+          <% else %>
+            <%= link_to "登陆", login_path %>
+            <%= link_to "注册", signup_path %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

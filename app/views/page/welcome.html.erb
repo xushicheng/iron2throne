@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>铁王座</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container row">
+    <div class="span12 home">
+      <div class="wrapper">
+        <h1 class="description">丹妮莉丝·史坦尼斯?</h1>
+        <span class="logo">喜欢艾瑞雅初长成?</span>
+        <br />
+        <h1 class="description">小恶魔精湛的演技?</h1>
+        <br />
+      </div>
+      <%= link_to "一起进入", microposts_url, class: "start-btn" %>
+    </div>
+    <div id="home-bg">
+      <%= image_tag(@random_image) %>
+    </div>
+  </div>
+</body>
+</html>
+

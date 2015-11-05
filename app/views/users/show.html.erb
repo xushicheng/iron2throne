@@ -1,0 +1,22 @@
+<div class="cover-micropost-title">
+  <% if @user!=current_user %>
+    <!-- 如果浏览的用户不是自己,不是当前用户,就显示其他人分享的视频 -->
+    <h2><%= @user.name %>分享了<%= @user.microposts.count %>个视频:</h2>
+      <%= render @microposts %>
+      <% else %>
+      <!-- 如果浏览的是自己,分两种情况,第一种是自己确实有发视频 -->
+      <% if @user.microposts.any? %>
+        <h2>你分享了<%= @user.microposts.count %>个视频:<h2>
+          <% @user.microposts.each do |m| %>
+            <div id="micropost-<%= m.id %>">
+              <h3><%= link_to m.title, m %></h3>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+      <!-- 第二种情况是自己没发布视频 -->
+        <h2>( ⊙ o ⊙ )啊哦!你还没有发布视频哟!</h2>
+        <h3><%= link_to "点我发布一个!", new_micropost_path %></h3>
+      <% end %>
+  <% end %>
+</div>
